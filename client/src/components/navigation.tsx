@@ -20,7 +20,7 @@ export default function Navigation() {
           <div className="flex items-center">
             <Link href="/">
               <h1 className="text-2xl font-serif font-bold text-heritage-700 cursor-pointer">
-                HeriTix
+                TICK-IT
               </h1>
             </Link>
           </div>
@@ -30,9 +30,9 @@ export default function Navigation() {
             <div className="ml-10 flex items-baseline space-x-4">
               {navigationItems.map((item) => (
                 <Link key={item.href} href={item.href}>
-                  <a className="text-heritage-700 hover:text-heritage-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                  <span className="text-heritage-700 hover:text-heritage-500 px-3 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer">
                     {item.label}
-                  </a>
+                  </span>
                 </Link>
               ))}
               <div className="ml-4 flex items-center space-x-2">

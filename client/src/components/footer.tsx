@@ -43,7 +43,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div>
-            <h3 className="text-2xl font-serif font-bold mb-4">HeriTix</h3>
+            <h3 className="text-2xl font-serif font-bold mb-4">TICK-IT</h3>
             <p className="text-heritage-200 mb-4">
               Connecting travelers with the world's most significant archaeological and historical sites through seamless digital experiences.
             </p>

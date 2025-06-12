@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { Star } from "lucide-react";
+import { Star, Eye } from "lucide-react";
+import { Link } from "wouter";
 import type { Site } from "@shared/schema";
 
 interface SiteCardProps {
@@ -47,12 +48,23 @@ export default function SiteCard({ site, onBookNow }: SiteCardProps) {
             </span>
             <span className="text-sm text-heritage-500">/person</span>
           </div>
-          <Button 
-            onClick={() => onBookNow(site)}
-            className="bg-heritage-600 text-white hover:bg-heritage-700 transition-colors"
-          >
-            Book Now
-          </Button>
+          <div className="flex space-x-2">
+            <Link href={`/site/${site.id}`}>
+              <Button 
+                variant="outline"
+                className="border-heritage-600 text-heritage-600 hover:bg-heritage-50"
+              >
+                <Eye className="mr-2 h-4 w-4" />
+                View
+              </Button>
+            </Link>
+            <Button 
+              onClick={() => onBookNow(site)}
+              className="bg-heritage-600 text-white hover:bg-heritage-700 transition-colors"
+            >
+              Book Now
+            </Button>
+          </div>
         </div>
       </CardContent>
     </Card>
