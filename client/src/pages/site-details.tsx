@@ -214,7 +214,7 @@ export default function SiteDetailsPage() {
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {site.availableTimeSlots.map((slot, index) => (
+                  {site.availableTimeSlots?.map((slot, index) => (
                     <div
                       key={index}
                       className={`p-4 border rounded-lg ${
@@ -319,7 +319,7 @@ export default function SiteDetailsPage() {
                   <div className="flex justify-between text-sm">
                     <span className="text-heritage-600">Available Slots:</span>
                     <span className="font-medium text-heritage-800">
-                      {site.availableTimeSlots.filter(slot => slot.available > 0).length} times
+                      {site.availableTimeSlots?.filter(slot => slot.available > 0).length || 0} times
                     </span>
                   </div>
                 </div>
