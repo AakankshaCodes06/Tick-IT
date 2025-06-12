@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -7,6 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Search, MapPin, Calendar, Users } from "lucide-react";
 
 export default function HeroSection() {
+  const [, setLocation] = useLocation();
   const [searchData, setSearchData] = useState({
     destination: "",
     date: "",
@@ -14,7 +16,13 @@ export default function HeroSection() {
   });
 
   const handleSearch = () => {
-    console.log("Search data:", searchData);
+    // Redirect to search page with query parameters
+    const params = new URLSearchParams();
+    if (searchData.destination) params.set('q', searchData.destination);
+    if (searchData.date) params.set('date', searchData.date);
+    if (searchData.visitors !== "1 Adult") params.set('visitors', searchData.visitors);
+    
+    setLocation(`/search?${params.toString()}`);
   };
 
   return (
